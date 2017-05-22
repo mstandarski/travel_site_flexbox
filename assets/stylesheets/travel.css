@@ -1,7 +1,11 @@
+
+
 /*
 Choose a font from google fonts to use for the text in the hero
 and use @import to include in this style sheet. The font in the image is "Bangers"
 */
+@import "https://fonts.googleapis.com/css?family=Bangers";
+
 
 
 /*
@@ -12,7 +16,15 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - using the position property, make sure the navigation stays fixed to the top when scrolling
 - when scrolling make sure there is no gap between the masthead and top of the page
 */
-
+#masthead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
 
 /*
 - make the hero div a flexbox container
@@ -23,7 +35,15 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - add a black dropshadow to the text with a 2px offset
 - adjust the top margin of the hero to account for the fixed masthead
 */
-
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Bangers, cursive;
+  text-shadow: 2px 2px black;
+  margin-top: 55px;
+}
 
 /*
 - Make the cards div a flexbox container
@@ -31,7 +51,12 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - reverse the order of the cards using flexbox (should become chili aruna italy spain)
 - make sure when the page shrinks the cards wrap and stack on eachother
 */
-
+#cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
 
 /*
 - Make each individual card a flexbox container
@@ -40,13 +65,47 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - make sure the information in the card is at the bottom of the card using flexbox
   (there is bottom padding applied in common.css to keep it off the very bottom so it looks right)
 */
+#chile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
 
+#aruba {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#italy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#spain {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
 
 /*
 - Make the travel table div a flexbox container
 - using flexbox make sure the content is stacked and not in a row
-- make sure the content is centered in each card using flexbox
+- make sure the content is centered in each card using flexbox -- Ignore?
 */
+
+#travel-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 /*
@@ -55,13 +114,35 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - make sure the content is vertically centered in the here div using flexbox
 */
 
+#footer {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
 
 /*
 MEDIUM CHALLENGE:
-Using media queries, hide the national bird column in the table when the screen is at a 
+Using media queries, hide the national bird column in the table when the screen is at a
 max width of 800px. Hide both the national bird and population column when the
 screen is at a max width of 600px
+*/
 
+@media (max-width: 800px) {
+  .bird {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .population {
+    display: none;
+  }
+}
+
+
+
+/*
 HINT:
-leverage the classes .bird and .population 
+leverage the classes .bird and .population
 */
